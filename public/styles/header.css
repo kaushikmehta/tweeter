@@ -9,3 +9,6 @@
   background-image: url("../images/header-background.png");
 }
 
+.main-header {
+  margin-top: 120px;
+}
