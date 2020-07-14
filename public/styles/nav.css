@@ -11,3 +11,27 @@ nav {
 nav > span {
   font-family: 'Bungee', sans-serif;
 }
+.nav-cta a{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #FFFFFF;
+  text-decoration: none;
+  
+}
+.down_arrow{
+  transform:rotate(90deg);
+  align-self: center;
+  font-size:2em;
+  color:  red;
+}
+
+nav a:hover{
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
+nav a:hover .down_arrow, .write-tweet{
+  transition-duration: 0.5s;
+  margin-top: 0.2em;
+}
