@@ -1,0 +1,39 @@
+.container div{
+  width: 100%;
+}
+.new-tweet{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-self: center;
+}
+
+form label {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+textarea {
+  background: transparent;
+  resize: none;
+  border: 0 none;
+  width: 100%;
+  height: 1.5em;
+  font-size: 1em;
+  border-bottom: 4px solid black;
+  align-self: baseline;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+form footer {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', sans-serif;
+}
+
+footer button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
