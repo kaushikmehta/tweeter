@@ -65,6 +65,11 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
+
+    <!-- error message box imported from https://codepen.io/palimadra/pen/OVvbaY -->
+    <div id="error"></div>
+
+
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
       <form method="POST" action="/tweets">
@@ -75,7 +80,8 @@
         </footer>
       </form>
     </section>
-    <section id="tweets"></section>
+    <section id="tweets">
+    </section>
   </main>
 </body>
 

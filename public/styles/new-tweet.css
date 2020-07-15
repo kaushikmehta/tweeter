@@ -48,6 +48,19 @@ form > footer > button {
   flex-direction: column;
   
 }
+
+#error{
+  display: none;
+  color: #D8000C;
+  background-color: #FFBABA;
+  background-image: url('https://i.imgur.com/GnyDvKN.png');
+  border: 1px solid;
+	margin: 10px 0px;
+	padding: 15px 10px 15px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+
 .individual-tweet {
   padding: 1em;
   margin-top: 1em;
@@ -89,3 +102,4 @@ form > footer > button {
 .footer-icons {
   color: #0040B8;
 }
+

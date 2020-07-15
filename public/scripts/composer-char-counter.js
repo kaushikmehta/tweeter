@@ -16,6 +16,13 @@ $(document).ready(function() {
     } else {
       characterCounter.removeClass('red');
     }
+
+    if ($( "#error" ).css("display") === 'block'){
+      $( "#error" ).slideUp( "slow", function() {
+        // Animation complete.
+      });
+    }
+
   });
 
 });

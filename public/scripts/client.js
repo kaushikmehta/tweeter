@@ -48,13 +48,21 @@ $(document).ready( () => {
   $('form').submit(function(event) {
     event.preventDefault();
 
-    const serialized = $(this).serialize();
-    const textLength = $('#tweet-text').val().length;
-    
+    const serialized = $(this).serialize(); // text=
+    const textLength = $('#tweet-text').val().length;  
+
     if (textLength === 0) {
-      alert("Your message is empty. All powerful messages have atleast one character");
+      $( "#error" ).text("Your message is empty. All powerful messages have atleast one character");
+
+      $( "#error" ).slideDown( "slow", function() {
+        // Animation complete.
+      });
     } else if (textLength > 140) {
-      alert("Our users have a short attention span. Keep your message under 140 characters so you don't lose them!");
+      $( "#error" ).text("Our users have a short attention span. Keep your message under 140 characters so you don't lose them!");
+      
+      $( "#error" ).slideDown( "slow", function() {
+        // Animation complete.
+      });
     } else {
       $.ajax({
         method: "POST",
