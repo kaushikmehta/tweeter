@@ -49,6 +49,7 @@ $(document).ready( () => {
 
   $('form').submit(function(event) {
     event.preventDefault();
+
     const serialized = $(this).serialize();
 
     const textLength = $('#tweet-text').val().length;
@@ -64,8 +65,13 @@ $(document).ready( () => {
         data: serialized
       }).then(response => {
         loadTweets();
+        clearTweetText();
       });
     }
   }); // form submit
 });
 
+const clearTweetText = () => {
+  const textArea = $('#tweet-text');
+  textArea.val("");
+}
