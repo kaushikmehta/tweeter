@@ -7,11 +7,12 @@
 const renderTweets = function (tweetData) {
   tweetData.forEach(element => {
     const createdTweet = createTweetElement(element);
-    $('#tweets').append(createdTweet);
+    $('#tweets').prepend(createdTweet);
   });
 };
 
  const createTweetElement = (tweetData) => {
+  const tweetDate = String(new Date(tweetData.created_at)).slice(3,15);
 
   const tweetTemplate = `<article class="individual-tweet">
   <header class="tweet-header">
@@ -19,10 +20,10 @@ const renderTweets = function (tweetData) {
     <span class="handle">${tweetData.user.handle}</span>
   </header>
   <div class="tweet-body">
-    ${tweetData.content.text}
+    ${htmlEncode(tweetData.content.text)}
   </div>
   <footer>
-    <div class="time-posted">${tweetData.created_at}</div>
+    <div class="time-posted">${tweetDate}</div>
     <div class="footer-icons">
       <i class="fa fa-flag" aria-hidden="true"></i>
       <i class="fa fa-retweet" aria-hidden="true"></i>
@@ -37,10 +38,7 @@ const renderTweets = function (tweetData) {
 $(document).ready( () => {
   const loadTweets = function () {
     $('#tweets').empty();
-    $.ajax({
-      url:"/tweets",
-      method: "GET"
-    }).then((response) => {
+    $.get("/tweets").then((response) => {
       renderTweets(response);
     })
   };
@@ -51,7 +49,6 @@ $(document).ready( () => {
     event.preventDefault();
 
     const serialized = $(this).serialize();
-
     const textLength = $('#tweet-text').val().length;
     
     if (textLength === 0) {
@@ -74,4 +71,11 @@ $(document).ready( () => {
 const clearTweetText = () => {
   const textArea = $('#tweet-text');
   textArea.val("");
+};
+
+// code for htmlEncode imported from https://portswigger.net/web-security/cross-site-scripting/preventing
+function htmlEncode(str){
+  return String(str).replace(/[^\w. ]/gi, function(c){
+     return '&#'+c.charCodeAt(0)+';';
+  });
 }
