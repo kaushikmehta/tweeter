@@ -60,14 +60,9 @@ form > footer > button {
 }
 
 .individual-tweet:hover .handle {
-  transition: all .4s ease;
--webkit-transition: all .4s ease;
-  display: inline;
+  font-weight: 600;
 }
 
-.handle {
-  display: none;
-}
 
 .individual-tweet > .tweet-header {
   display: flex;
