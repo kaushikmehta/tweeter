@@ -51,13 +51,21 @@ $(document).ready( () => {
     event.preventDefault();
     const serialized = $(this).serialize();
 
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: serialized
-    }).then(response => {
-      loadTweets();
-    });
+    const textLength = $('#tweet-text').val().length;
+    
+    if (textLength === 0) {
+      alert("Your message is empty. All powerful messages have atleast one character");
+    } else if (textLength > 140) {
+      alert("Our users have a short attention span. Keep your message under 140 characters so you don't lose them!");
+    } else {
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data: serialized
+      }).then(response => {
+        loadTweets();
+      });
+    }
   }); // form submit
 });
 
