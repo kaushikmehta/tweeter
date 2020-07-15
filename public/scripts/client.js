@@ -5,8 +5,6 @@
  */
 
 const renderTweets = function (tweetData) {
-  // console.log("called renderTweets with below");
-  // console.log(tweetData);
   tweetData.forEach(element => {
     const createdTweet = createTweetElement(element);
     $('#tweets').append(createdTweet);
@@ -38,6 +36,7 @@ const renderTweets = function (tweetData) {
 
 $(document).ready( () => {
   const loadTweets = function () {
+    $('#tweets').empty();
     $.ajax({
       url:"/tweets",
       method: "GET"
@@ -57,7 +56,7 @@ $(document).ready( () => {
       url: "/tweets",
       data: serialized
     }).then(response => {
-      alert("Your tweet is on it's way to tweetHQ. Keep a lookout it'll be displayed here soon!")
+      loadTweets();
     });
   }); // form submit
 });
