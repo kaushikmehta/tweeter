@@ -79,6 +79,9 @@ $(document).ready( () => {
 const clearTweetText = () => {
   const textArea = $('#tweet-text');
   textArea.val("");
+  
+  const characterCounters = $('form').find('.counter');
+  const characterCounter = characterCounters.text("140");
 };
 
 // code for htmlEncode imported from https://portswigger.net/web-security/cross-site-scripting/preventing
