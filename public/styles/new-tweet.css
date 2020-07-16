@@ -119,7 +119,7 @@ form > footer > button {
   
   }
    .top-scroller:hover {
-      color: red;
+      color: #ff7e72;
   }
   .up_arrow{
     transform:rotate(-90deg);
