@@ -74,12 +74,26 @@ $(document).ready( () => {
       });
     }
   }); // form submit
+
+  $("#nav-anchor").click( () => {
+    if ($( "#form" ).css("display") === 'block'){
+      $( "#form" ).slideUp( "slow", function() {
+        // Animation complete.
+      });
+    } else {
+      $( "#form" ).slideDown( "slow", function() {
+        // Animation complete.
+      });
+    }
+  });
+
+
 });
 
 const clearTweetText = () => {
   const textArea = $('#tweet-text');
   textArea.val("");
-  
+
   const characterCounters = $('form').find('.counter');
   const characterCounter = characterCounters.text("140");
 };

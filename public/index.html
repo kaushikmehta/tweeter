@@ -44,7 +44,7 @@
   <nav>
     <span>tweeter</span>
     <div class="nav-cta">
-      <a href="#">
+      <a href="#" id="nav-anchor">
         <div class="write-tweet"> <strong>Write</strong> a New Tweet</div>
         <div class="down_arrow">&raquo;</div>
       </a>
@@ -71,8 +71,8 @@
 
 
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form method="POST" action="/tweets">
+      <!-- <h2>Compose Tweet</h2> -->
+      <form method="POST" action="/tweets" id="form">
         <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
         <footer>
           <button type="submit">Tweet</button>
