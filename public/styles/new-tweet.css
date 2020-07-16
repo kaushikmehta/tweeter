@@ -103,3 +103,26 @@ form > footer > button {
   color: #0040B8;
 }
 
+.top-scroller {
+  position: fixed;
+  bottom: 2rem;
+  right: 4rem;
+  display: none;
+  z-index: 2;
+  text-align: center;
+  cursor: pointer;
+  /* border-radius: 50%; */
+  /* padding: 0.4rem; */
+  /* background: #545149; */
+  color: #4056A1;
+  line-height: 3rem;
+  
+  }
+   .top-scroller:hover {
+      color: red;
+  }
+  .up_arrow{
+    transform:rotate(-90deg);
+    font-size:4rem;
+    align-self: start;
+  }

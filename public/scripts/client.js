@@ -11,8 +11,8 @@ const renderTweets = function (tweetData) {
   });
 };
 
- const createTweetElement = (tweetData) => {
-  const tweetDate = String(new Date(tweetData.created_at)).slice(3,15);
+const createTweetElement = (tweetData) => {
+  const tweetDate = String(new Date(tweetData.created_at)).slice(3, 15);
 
   const tweetTemplate = `<article class="individual-tweet">
   <header class="tweet-header">
@@ -31,11 +31,11 @@ const renderTweets = function (tweetData) {
     </div>
   </footer>
 </article>`;
- 
+
   return tweetTemplate;
 } // function
 
-$(document).ready( () => {
+$(document).ready(() => {
   const loadTweets = function () {
     $('#tweets').empty();
     $.get("/tweets").then((response) => {
@@ -45,22 +45,22 @@ $(document).ready( () => {
 
   loadTweets();
 
-  $('form').submit(function(event) {
+  $('form').submit(function (event) {
     event.preventDefault();
 
     const serialized = $(this).serialize(); // text=
-    const textLength = $('#tweet-text').val().length;  
+    const textLength = $('#tweet-text').val().length;
 
     if (textLength === 0) {
-      $( "#error" ).text("Your message is empty. All powerful messages have atleast one character");
+      $("#error").text("Your message is empty. All powerful messages have atleast one character");
 
-      $( "#error" ).slideDown( "slow", function() {
+      $("#error").slideDown("slow", function () {
         // Animation complete.
       });
     } else if (textLength > 140) {
-      $( "#error" ).text("Our users have a short attention span. Keep your message under 140 characters so you don't lose them!");
-      
-      $( "#error" ).slideDown( "slow", function() {
+      $("#error").text("Our users have a short attention span. Keep your message under 140 characters so you don't lose them!");
+
+      $("#error").slideDown("slow", function () {
         // Animation complete.
       });
     } else {
@@ -75,20 +75,37 @@ $(document).ready( () => {
     }
   }); // form submit
 
-  $("#nav-anchor").click( () => {
-    if ($( "#form" ).css("display") === 'block'){
-      $( "#form" ).slideUp( "slow", function() {
+  $("#nav-anchor").click(() => {
+    if ($("#form").css("display") === 'block') {
+      $("#form").slideUp("slow", function () {
         // Animation complete.
       });
     } else {
-      $( "#form" ).slideDown( "slow", function() {
+      $("#form").slideDown("slow", function () {
         // Animation complete.
       });
     }
   });
 
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 10) {
+      $('.top-scroller').fadeIn();
+    } else {
+      $('.top-scroller').fadeOut();
+    }
+  });
+  //Click event to scroll to top
+  $('.top-scroller').click(function () {
+    $('html, body').animate({ scrollTop: 0 }, 1000);
+    return false;
+  });
+
 
 });
+
+
+
+
 
 const clearTweetText = () => {
   const textArea = $('#tweet-text');
@@ -99,8 +116,8 @@ const clearTweetText = () => {
 };
 
 // code for htmlEncode imported from https://portswigger.net/web-security/cross-site-scripting/preventing
-function htmlEncode(str){
-  return String(str).replace(/[^\w. ]/gi, function(c){
-     return '&#'+c.charCodeAt(0)+';';
+function htmlEncode(str) {
+  return String(str).replace(/[^\w. ]/gi, function (c) {
+    return '&#' + c.charCodeAt(0) + ';';
   });
 }
