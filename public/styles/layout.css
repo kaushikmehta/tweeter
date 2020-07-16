@@ -19,15 +19,27 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  width: 90vw;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
  main{
-   width: 90%;
+   width: 65%;
    display: flex;
    margin: auto;
    flex-direction: column;
-   padding: 1em;
+   padding: 0 3em;
+   margin-top: 140px;
 }
+
+.container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+

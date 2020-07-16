@@ -88,12 +88,31 @@ $(document).ready(() => {
   });
 
   $(window).scroll(function () {
-    if ($(this).scrollTop() > 10) {
+    const scrollHandler = $(this).scrollTop();
+    if (window.matchMedia('(max-width: 800px)').matches) {
+      if (scrollHandler > 400) {
+        $('nav').css("background-color", "#FFA69E")
+      } else {
+        $('nav').css("background-color", "transparent")
+      }
+    } else {
+      $('nav').css("background-color", "#4056A1")
+    }
+
+    if (scrollHandler > 50) {
       $('.top-scroller').fadeIn();
+
     } else {
       $('.top-scroller').fadeOut();
     }
   });
+
+  $(window).resize(function () {
+    window.scrollTo(0, 0)
+    window.scrollBy(0, 10)
+    window.scrollBy(0, -10)
+  });
+
   //Click event to scroll to top
   $('.top-scroller').click(function () {
     $('html, body').animate({ scrollTop: 0 }, 1000);

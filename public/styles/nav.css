@@ -8,6 +8,7 @@ nav {
   justify-content: space-between;
   position: fixed;
   top: 0;
+  transition-duration: 0.5s;
 }
 
 nav > span {
@@ -21,19 +22,31 @@ nav > span {
   text-decoration: none;
   
 }
+
+
 .down_arrow{
   transform:rotate(90deg);
   align-self: center;
   font-size:2em;
   color:  red;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: bounce-1;
+  animation-timing-function: linear;
 }
 
 nav a:hover{
-     color:#00A0C6; 
+     /* color:#00A0C6;  */
      text-decoration:none; 
      cursor:pointer;  
 }
 nav a:hover .down_arrow, .write-tweet{
   transition-duration: 0.5s;
-  margin-top: 0.2em;
+}
+
+
+@keyframes bounce-1 {
+  0%   { transform: translateY(0) rotate(90deg) }
+  50%  { transform: translateY(10px) rotate(90deg); }
+  100% { transform: translateY(0) rotate(90deg); }
 }

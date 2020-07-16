@@ -5,16 +5,16 @@
   flex-direction: column;
   width: 100%;
   align-self: center;
-}
-
-form > label {
-  font-family: 'Source Sans Pro', sans-serif;
+  margin:1em;
+  padding: 1em 0
 }
 
 textarea {
   background: transparent;
   resize: none;
   border: 0 none;
+  font-weight: 600;
+  color: #545149;
   width: 100%;
   height: 1.5em;
   font-size: 1em;
@@ -22,6 +22,7 @@ textarea {
   align-self: baseline;
   min-height: 1em;
   overflow-y: auto;
+  
 }
 
 textarea:focus {
@@ -46,11 +47,15 @@ form > footer > button {
 #tweets {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  align-self: center;
+  
   
 }
 
 #error{
   display: none;
+  width: 100%;
   color: #D8000C;
   background-color: #FFBABA;
   background-image: url('https://i.imgur.com/GnyDvKN.png');
@@ -65,6 +70,7 @@ form > footer > button {
   padding: 1em;
   margin-top: 1em;
   border: 2px solid black;
+  width: 100%;
 }
 
 .individual-tweet:hover {
@@ -112,9 +118,6 @@ form > footer > button {
   z-index: 2;
   text-align: center;
   cursor: pointer;
-  /* border-radius: 50%; */
-  /* padding: 0.4rem; */
-  /* background: #545149; */
   color: #4056A1;
   line-height: 3rem;
   
@@ -126,4 +129,46 @@ form > footer > button {
     transform:rotate(-90deg);
     font-size:4rem;
     align-self: start;
+  }
+
+  @media (max-width: 800px) {
+    nav {
+      background-color: transparent;
+      padding: 2em;
+    }
+    .main-header {
+      width: 100vw;
+      padding: 0;
+      margin-top: 0;
+    }
+    .main-header header {
+      height: 520px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background-color: #FFA69E;
+      background-image: url(../images/header-background.png);
+  }
+    body {
+      flex-direction: column;
+      width: 100%;
+    }
+    main{
+      width: 100%;
+      margin-top: 0px;
+      padding: 0 1em;
+   }
+  
+  }
+
+  @media (max-width: 600px) {
+   
+    main{
+      width: 100%;
+      margin-top: 0px;
+      padding: 0 1em;
+   }
+  
   }

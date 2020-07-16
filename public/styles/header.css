@@ -1,3 +1,9 @@
+.main-header {
+  margin-top: 140px;
+  width: 45%;
+  padding: 2em;
+}
+
 .main-header header {
   height: 400px;
   width: 100%;
@@ -7,10 +13,6 @@
   flex-direction: column;
   background-color: #FFA69E;
   background-image: url("../images/header-background.png");
-}
-
-.main-header {
-  margin-top: 120px;
 }
 
 .main-header h2 {
