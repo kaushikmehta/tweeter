@@ -12,7 +12,15 @@ const renderTweets = function (tweetData) {
 };
 
 const createTweetElement = (tweetData) => {
-  const tweetDate = String(new Date(tweetData.created_at)).slice(3, 15);
+  const tweetDate = new Date(tweetData.created_at);
+  
+  const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+  const firstDate = new Date(tweetDate);
+  const secondDate = new Date();
+
+  const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+  let daysAgo = "";
+  diffDays === 0 ? daysAgo = "Today" : daysAgo = diffDays + " Day(s) Ago";
 
   const tweetTemplate = `<article class="individual-tweet">
   <header class="tweet-header">
@@ -23,7 +31,7 @@ const createTweetElement = (tweetData) => {
     ${htmlEncode(tweetData.content.text)}
   </div>
   <footer>
-    <div class="time-posted">${tweetDate}</div>
+    <div class="time-posted">${daysAgo}</div>
     <div class="footer-icons">
       <i class="fa fa-flag" aria-hidden="true"></i>
       <i class="fa fa-retweet" aria-hidden="true"></i>
@@ -91,7 +99,7 @@ $(document).ready(() => {
     const scrollHandler = $(this).scrollTop();
 
     if (window.matchMedia('(max-width: 800px)').matches) {
-      
+
       if (scrollHandler > 400) {
         $('nav').css("background-color", "#FFA69E")
       } else {
