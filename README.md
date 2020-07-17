@@ -6,7 +6,11 @@ The app escapes malicious code, handles requests using AJAX and is built using R
 
 ## Final Product
 
-![""]()
+!["Screenshot of Default Desktop View"](./public/images/docs/desktop-view.png)
+!["Screenshot of Form validation"](./public/images/docs/form-validation.png)
+!["Screenshot of mobile view"](./public/images/docs/responsive-layout-top.png)
+!["Screenshot of mobile view when scrolled"](./public/images/docs/responsive-layout-scrolled.png)
+!["Screenshot of mobile view when scrolled"](./public/images/docs/responsive-layout-scrolled.png)
 
 ## Getting Started
 
