@@ -1,3 +1,5 @@
+// Counts number of characters 
+
 $(document).ready(function() {
 
   const textArea = $('#tweet-text');
@@ -17,6 +19,7 @@ $(document).ready(function() {
       characterCounter.removeClass('red');
     }
 
+    //hides validation errors when users starts typing again
     if ($( "#error" ).css("display") === 'block'){
       $( "#error" ).slideUp( "slow", function() {
         // Animation complete.

@@ -109,6 +109,7 @@ $(document).ready(() => {
     }
   });
 
+  // When user scrolls, checks for breakpoint to change nav-bar background and also add the 'scroll to top' icon
   $(window).scroll(function () {
     const scrollHandler = $(this).scrollTop();
 
@@ -137,6 +138,8 @@ $(document).ready(() => {
     }
   });
 
+  //resets windows when switching window sizes (mainly for dev purposes).
+  // Helps when swithching window sizes in inspect modes
   $(window).resize(function () {
     window.scrollTo(0, 0)
     window.scrollBy(0, 10)
