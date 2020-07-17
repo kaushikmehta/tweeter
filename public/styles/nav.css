@@ -1,3 +1,5 @@
+/* Styles are laid out based on how they appear in HTML  */
+
 nav {
   height: 120px;
   width: 100vw;
@@ -44,14 +46,14 @@ nav a:hover .down_arrow, .write-tweet{
   transition-duration: 0.5s;
 }
 
-
+/* Animation for arrow to create new tweet */
 @keyframes bounce-1 {
   0%   { transform: translateY(0) rotate(90deg) }
   50%  { transform: translateY(10px) rotate(90deg); }
   100% { transform: translateY(0) rotate(90deg); }
 }
 
-
+/* CSS Rules from when user is accessing from mobile device */
 @media (max-width: 600px) {
    
   nav {

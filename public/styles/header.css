@@ -1,3 +1,6 @@
+/* Selectors appear in order of when they are introduced in HTML */
+
+/* main-header is the area on the page with the user's avatar details */
 .main-header {
   margin-top: 140px;
   width: 45%;

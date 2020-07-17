@@ -132,7 +132,7 @@ form > footer > button {
     font-size:4rem;
     align-self: start;
   }
-
+/* CSS Rules from when user is accessing from mobile device */
   @media (max-width: 800px) {
     nav {
       background-color: transparent;

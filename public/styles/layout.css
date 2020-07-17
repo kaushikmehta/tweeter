@@ -42,7 +42,7 @@ body {
   flex-flow: row wrap;
 }
 
-
+/* CSS Rules from when user is accessing from mobile device */
 @media (max-width: 600px) {
    
   main{
