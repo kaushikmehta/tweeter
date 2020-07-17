@@ -24,7 +24,10 @@ const createTweetElement = (tweetData) => {
 
   const tweetTemplate = `<article class="individual-tweet">
   <header class="tweet-header">
+    <span class="name">
     <img src="${tweetData.user.avatars}" class="avatar"/>
+    ${tweetData.user.name}
+    </span>
     <span class="handle">${tweetData.user.handle}</span>
   </header>
   <div class="tweet-body">

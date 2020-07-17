@@ -78,7 +78,7 @@ form > footer > button {
   transition: 0.5s;
 }
 
-.individual-tweet:hover .handle {
+.individual-tweet:hover {
   font-weight: 600;
 }
 
@@ -89,7 +89,9 @@ form > footer > button {
   margin: 1em;
 
 }
-
+.name {
+  display: flex;
+}
 .tweet-body {
   margin: 0.5em 0;
   overflow-wrap: break-word;
