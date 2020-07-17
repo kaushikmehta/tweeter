@@ -98,8 +98,14 @@ $(document).ready(() => {
   $(window).scroll(function () {
     const scrollHandler = $(this).scrollTop();
 
-    if (window.matchMedia('(max-width: 800px)').matches) {
+    if (window.matchMedia('(max-width: 400px)').matches) {
 
+      if (scrollHandler > 50) {
+        $('nav').css("background-color", "#FFA69E")
+      } else {
+        $('nav').css("background-color", "transparent")
+      }
+    } else if (window.matchMedia('(max-width: 800px)').matches){
       if (scrollHandler > 400) {
         $('nav').css("background-color", "#FFA69E")
       } else {
