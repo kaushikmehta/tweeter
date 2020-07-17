@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Adds individual tweets to top of tweet section
 const renderTweets = function (tweetData) {
   tweetData.forEach(element => {
     const createdTweet = createTweetElement(element);
@@ -11,9 +12,13 @@ const renderTweets = function (tweetData) {
   });
 };
 
+// Creates individual tweet element
+//calculates how many days ago a tweet was published
+// avoids malicious code with the use of htmlEncode helper function
+//
 const createTweetElement = (tweetData) => {
   const tweetDate = new Date(tweetData.created_at);
-  
+
   const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
   const firstDate = new Date(tweetDate);
   const secondDate = new Date();
@@ -45,6 +50,12 @@ const createTweetElement = (tweetData) => {
 
   return tweetTemplate;
 } // function
+
+//When the document is loaded, calls the server for tweets and renders them
+// adds event handler on form submission including validation
+// adds jQuery logic for animations based on scroll events
+// adds AJAX POST request
+
 
 $(document).ready(() => {
   const loadTweets = function () {
@@ -108,7 +119,7 @@ $(document).ready(() => {
       } else {
         $('nav').css("background-color", "transparent")
       }
-    } else if (window.matchMedia('(max-width: 800px)').matches){
+    } else if (window.matchMedia('(max-width: 800px)').matches) {
       if (scrollHandler > 400) {
         $('nav').css("background-color", "#FFA69E")
       } else {
@@ -144,7 +155,7 @@ $(document).ready(() => {
 
 
 
-
+// Helper function to clear tweets that appear on page
 const clearTweetText = () => {
   const textArea = $('#tweet-text');
   textArea.val("");
@@ -153,6 +164,7 @@ const clearTweetText = () => {
   const characterCounter = characterCounters.text("140");
 };
 
+// Helper function to escape malicious messages sent from user
 // code for htmlEncode imported from https://portswigger.net/web-security/cross-site-scripting/preventing
 function htmlEncode(str) {
   return String(str).replace(/[^\w. ]/gi, function (c) {

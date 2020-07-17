@@ -2,6 +2,8 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
+The app escapes malicious code, handles requests using AJAX and is built using Responsive principles.
+
 ## Final Product
 
 ![""]()
@@ -21,5 +23,5 @@ Tweeter is a simple, single-page Twitter clone.
 - Chance
 - md5
 
-## Dependencies
+## Dev-Dependencies
 - nodemon
